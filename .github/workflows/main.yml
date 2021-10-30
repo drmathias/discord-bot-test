@@ -1,0 +1,16 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Actions for Discord
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+      uses: Ilshidur/action-discord@0.3.2
